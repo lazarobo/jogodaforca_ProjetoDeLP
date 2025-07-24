@@ -11,7 +11,7 @@ class Forca
 {
 private:
     SelectWord _palavraArmazenada;
-    std::string _palavraSecreta;
+    std::string _palavraSecreta, _dica;
     int _chancesRestantes;
     std::set<char> _letrasErradas;
     std::set<char> _letrasCertas;
@@ -27,6 +27,7 @@ public:
 
     std::set<char> getLetrasErradas() const;
     std::string palavraCompleta() const;
+    std::string getDica() const;
 
 };
 

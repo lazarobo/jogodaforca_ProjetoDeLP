@@ -3,6 +3,7 @@
 Forca::Forca(const std::string& caminhoArquivo, int chances){
     _palavraArmazenada.carregarPalavras(caminhoArquivo);
     _palavraSecreta = _palavraArmazenada.getWord();
+    _dica = _palavraArmazenada.getHint();
     _chancesRestantes = chances;
 }
 
@@ -86,4 +87,8 @@ std::set<char> Forca::getLetrasErradas() const {
 
 std::string Forca::palavraCompleta() const {
     return _palavraSecreta;
+}
+
+std::string Forca::getDica() const{
+    return _dica;
 }

@@ -37,14 +37,16 @@ int main(int argc, char* argv[]) {
         }
 
         if (venceu == true) {
-            std::cout << "Parabéns, você venceu!! A palavra era: " << progresso << "\n";
+            std::cout << "Parabéns, você venceu!! A palavra era: " << jogo.palavraCompleta() << "\n";
             break;
         } 
 
         std::string entrada;
-        std::cout << "Digite uma letra: ";
-        std::cout << "----------------------------------------------\n";
+        std::cout << "A dica é: " << jogo.getDica() << "\n";
+        std::cout << "Digite uma letra: \n";
+    
         std::getline(std::cin, entrada);
+        
 
         system("clear");
 
