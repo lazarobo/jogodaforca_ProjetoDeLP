@@ -1,6 +1,7 @@
 #include "../include/SelectWord.h"
 #include "../include/Forca.h"
 #include <iostream>
+#include <cstdlib> 
 
 int main(int argc, char* argv[]) {
     if (argc != 3) {
@@ -38,15 +39,22 @@ int main(int argc, char* argv[]) {
         if (venceu == true) {
             std::cout << "Parabéns, você venceu!! A palavra era: " << progresso << "\n";
             break;
+        } 
+
+        std::string entrada;
+        std::cout << "Digite uma letra: ";
+        std::cout << "----------------------------------------------\n";
+        std::getline(std::cin, entrada);
+
+        system("clear");
+
+        if (entrada.length() == 1) {
+            jogo.chute(entrada[0]);
+        } else {
+            std::cout << "Entrada inválida. Digite apenas UMA letra.\n";
+            std::cout << "----------------------------------------------\n";
         }
 
-        std::cout << "> Entre com uma letra: \n";
-        std::cout << "----------------------------------------------\n";
-
-        char letra;
-        std::cin >> letra;
-
-        jogo.chute(letra);
 
         jogo.getLetrasErradas();
 
@@ -68,6 +76,11 @@ int main(int argc, char* argv[]) {
             break;
         }
     }
+
+    std::cout << "Pressione Enter para sair...";
+    //std::cin.ignore(); 
+    std::cin.get();  
+
     
 
     return 0;
